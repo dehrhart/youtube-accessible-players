@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YouTube Hover Player – Player</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <style>
+    .stage { position: fixed; inset: 0; display: grid; place-items: center; background:#000; }
+    .wrap  { position: relative; width: min(92vw, 1280px); aspect-ratio: 16 / 9; }
+    #player, .ytframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+    .overlay {
+      position:absolute; inset:0; display:grid; place-items:center;
+      background: rgba(0,0,0,.6); backdrop-filter: blur(2px);
+      cursor: pointer; user-select: none;
+    }
+    .overlay button {
+      font-size: clamp(1.1rem, 2.5vw, 2rem);
+      padding: 1rem 1.25rem; border-radius: 16px; border: 0;
+      background: #fff; color: #111; font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+    .hint {
+      position:absolute; bottom:.6rem; left:50%; transform:translateX(-50%);
+      color:#fff; font-size:.95rem; opacity:.9; text-align:center;
+      padding:.25rem .5rem; background:rgba(0,0,0,.35); border-radius:8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="wrap" id="hoverZone" aria-label="Video hover zone">
+      <div id="player" aria-label="YouTube player"></div>
+      <div class="overlay" id="gate" role="button" aria-label="Start and enable sound">
+        <button type="button">Start • Enable Sound</button>
+        <div class="hint">After starting: hover = play • move away = pause</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="scripts/player.js"></script>
+</body>
+</html>

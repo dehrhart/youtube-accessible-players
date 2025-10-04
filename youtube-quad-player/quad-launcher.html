@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YouTube Quad Player – Launcher</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <style>
+    body { display:grid; place-items:center; background:#000; min-height:100vh; }
+    .card {
+      width: min(900px, 95vw);
+      background:#111; color:#fff;
+      border-radius: 20px; padding: clamp(1rem, 3vw, 2rem);
+      box-shadow: 0 12px 42px rgba(0,0,0,.45);
+    }
+    h1 { margin: 0 0 .25rem; font-size: clamp(1.2rem, 2.2vw, 1.6rem); }
+    p.help { margin: 0 0 1rem; opacity:.85; }
+    form { display:grid; gap:.85rem; }
+    .row { display:grid; grid-template-columns: 110px 1fr; gap:.75rem; align-items:center; }
+    .row label { color:#ddd; }
+    input[type="text"] {
+      padding: .85rem 1rem; border-radius: 12px; border: 1px solid #2c2c2c;
+      background: #0f0f0f; color:#fff; font-size: 1rem;
+    }
+    .actions { display:flex; gap:.75rem; margin-top:.5rem; }
+    button {
+      padding: .85rem 1rem; border-radius: 12px; border: 0;
+      background: #0a66ff; color: #fff; font-weight: 700; cursor: pointer;
+    }
+    button.secondary { background:#2b2b2b; }
+    .tiny { font-size:.9rem; color:#bbb; margin-top:.5rem; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Quad Player Launcher</h1>
+    <p class="help">Paste a YouTube <b>video</b> or <b>playlist</b> link (or ID) for each quadrant. Mixed sources are fine.</p>
+    <form id="quadForm">
+      <div class="row"><label for="src1">Tile 1</label><input id="src1" type="text" placeholder="https://youtu.be/... or playlist link" /></div>
+      <div class="row"><label for="src2">Tile 2</label><input id="src2" type="text" placeholder="https://youtu.be/... or playlist link" /></div>
+      <div class="row"><label for="src3">Tile 3</label><input id="src3" type="text" placeholder="https://youtu.be/... or playlist link" /></div>
+      <div class="row"><label for="src4">Tile 4</label><input id="src4" type="text" placeholder="https://youtu.be/... or playlist link" /></div>
+      <div class="actions">
+        <button type="submit">Open Quad</button>
+        <button type="button" id="demo" class="secondary">Load KidsCamp Demo</button>
+      </div>
+      <div class="tiny">Tip: If a field is left empty, the quad will use the shared playlist (if provided on the URL) or a fallback demo video.</div>
+    </form>
+  </main>
+
+  <script src="scripts/quad-launcher.js"></script>
+</body>
+</html>

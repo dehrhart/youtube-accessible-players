@@ -1,0 +1,47 @@
+:root {
+  --bg: #0b0b0b;
+  --fg: #f7f7f7;
+  --muted: #bdbdbd;
+  --accent: #0a66ff;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+}
+/* Splash layout */
+.splash { display: grid; place-items: center; padding: 2rem; }
+.card {
+  width: min(680px, 95vw);
+  background: #111;
+  border-radius: 20px;
+  padding: clamp(1rem, 3vw, 2rem);
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+}
+.card h1 { margin: 0 0 .5rem; }
+#go { display: grid; grid-template-columns: 1fr auto; gap: .75rem; margin-top: .5rem; }
+#go input {
+  padding: .85rem 1rem; border-radius: 12px; border: 1px solid #2c2c2c;
+  background: #0f0f0f; color: var(--fg); font-size: 1rem;
+}
+#go button {
+  padding: .85rem 1rem; border-radius: 12px; border: 0;
+  background: var(--accent); color: #fff; font-weight: 700; cursor: pointer;
+}
+#go button:active { transform: translateY(1px); }
+.small { font-size: .9rem; }
+.muted { color: var(--muted); }
+/* Inline notice */
+.notice{
+  margin-top: 0.9rem;
+  background: #1a1a1a;
+  border: 1px solid #303030;
+  color: var(--fg);
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  line-height: 1.35;
+}
+.notice strong{ color: #ffd166; }

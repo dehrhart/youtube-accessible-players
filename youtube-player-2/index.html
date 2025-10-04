@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YouTube Hover Player – Splash</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body class="splash">
+  <main class="card" role="main">
+    <h1>YouTube Hover Player</h1>
+    <p>Paste a YouTube URL or Video ID. Then press Enter.</p>
+    <form id="go" autocomplete="off">
+      <input id="url" type="text" inputmode="url"
+        value="https://www.youtube.com/watch?v=XVdn2GHKKbk&list=PLbbzpd5Snicw7GlboouSiyYrs3OR4UIsS&index=1"
+        placeholder="https://youtu.be/VIDEOID or VIDEOID" required />
+      <button type="submit" aria-label="Load video">Load Video</button>
+    </form>
+    <div class="notice" role="note" aria-live="polite">
+      <strong>Heads up:</strong> Not every YouTube video will play inside a third‑party player.
+      If a video won’t start, it may be because the uploader disabled embedding, it’s age‑restricted
+      (requires sign‑in), it’s a paid/rental/TV item, region‑limited, or a live/DRM‑protected stream.
+      Try another video or paste a playlist and we’ll play what’s allowed.
+    </div>
+    <p class="small muted">Tip: /shorts, /live, or playlist links work too.</p>
+  </main>
+  <script src="scripts/splash.js"></script>
+</body>
+</html>

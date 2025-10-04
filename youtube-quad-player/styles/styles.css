@@ -1,0 +1,15 @@
+:root {
+  --bg: #0b0b0b;
+  --fg: #f7f7f7;
+  --muted: #bdbdbd;
+  --accent: #0a66ff;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+}
